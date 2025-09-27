@@ -1,0 +1,7 @@
+﻿#bbs_contents body ,#primaryContent
+.cont_comment,#Content {
+  position:relative;
+  width:650px; /* 댓글창 너비 */
+  left:0%;
+  /* margin:0 auto; 중앙 정렬 */
+}
