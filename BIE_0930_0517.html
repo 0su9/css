@@ -1,0 +1,151 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>background editer</title>
+  <link href="https://archive.org/download/maxWD/BIE_sty_0930_0458.css" rel="stylesheet">
+</head>
+<body>
+  <div class="scroll-wrapper">
+    <div class="scroll-rtl">
+      <div class="left-panel">
+        <!-- 코드 입력창 -->
+        <div class="group-wrapper">
+          <div class="group-title">
+            🧾 코드 입력창 
+            <div class="add-btn">
+              <button id="resetBtn">초기화</button>
+              <button id="saveBtn">저장</button>
+            </div>
+          </div>
+          <div class="group">
+            <textarea id="codeBox">/* 초기 CSS 코드 */</textarea>
+          </div>
+        </div>
+        <!-- 그라디언트 -->
+        <div class="group-wrapper">
+          <div class="group-title">
+            <label>⚙️<input type="checkbox" id="chkUrl6" checked>  -gradient ( </label>
+            <label><input type="checkbox" id="chkColor1" checked> color1,</label>
+            <label><input type="checkbox" id="chkColor2" checked> color2 ) </label>
+          </div>
+          <div class="group group-gradient">
+            <div class="angle-stack">
+              <select id="angle">
+                <option value="90deg">90°</option>
+                <option value="45deg">45°</option>
+                <option value="135deg">135°</option>
+                <option value="180deg">180°</option>
+                <option value="0deg">0°</option>
+              </select>
+            </div>
+            <div class="color-stack">
+              <input type="text" id="colorText1" class="colorText" placeholder="#ffffff">
+              <input type="color" id="colorPicker1" class="colorPicker">
+            </div>
+            <div class="color-stack">
+              <input type="text" id="colorText2" class="colorText" placeholder="#e1fbfc">
+              <input type="color" id="colorPicker2" class="colorPicker">
+            </div>
+            <div style="display: flex; align-items: center; gap: 6px;">
+              <span id="percentValue">18%</span>
+              <input type="range" id="percentInput" value="18" min="0" max="100" class="percent-slider">
+              <input type="text" id="colorText3" class="color-code" value="transparent">
+              <input type="text" id="colorText4" class="color-code" value="transparent">
+            </div>
+          </div>
+        </div>
+        <!-- 이미지 URL -->
+        <div class="group-wrapper">
+          <div class="group-title">
+            ⚙️ url (
+            <label><input type="checkbox" id="chkUrl5" class="use-image" checked>img5,</label>
+            <label><input type="checkbox" id="chkUrl4" class="use-image" checked>img4,</label>
+            <label><input type="checkbox" id="chkUrl3" class="use-image" checked>img3,</label>
+            <label><input type="checkbox" id="chkUrl2" class="use-image" checked>img2,</label>
+            <label><input type="checkbox" id="chkUrl1" class="use-image" checked>img1</label> )
+          </div>
+          <div class="group group-basic">
+            <div class="group-grid-2">
+              <input type="text" id="img5" class="url-input" placeholder="img5">
+              <input type="text" id="img4" class="url-input" placeholder="img4">
+              <input type="text" id="img3" class="url-input" placeholder="img3">
+              <input type="text" id="img2" class="url-input" placeholder="img2">
+            </div>
+            <input type="text" id="img1" class="url-input" placeholder="img1">
+          </div>
+        </div>
+        <!-- 설정 -->
+        <div class="group-wrapper">
+          <div class="group-title">
+            ⚙️
+            <label><input type="checkbox" id="chkColor" class="use-image" checked> -color; </label>
+            <label><input type="checkbox" id="chkAttach" class="use-image" checked> -attachment; </label>
+            <label><input type="checkbox" id="chkRepeat" class="use-image" checked> -repeat; </label>
+          </div>
+          <div class="group group-settings">
+            <div class="color-stack">
+              <input type="text" id="bgColor" class="colorText" placeholder="#ffffff">
+              <input type="color" id="bgColorPicker" class="colorPicker">
+            </div>
+            <select id="attach">
+              <option value="fixed">fixed</option>
+              <option value="scroll">scroll</option>
+              <option value="local">local</option>
+            </select>
+            <select id="repeat">
+              <option value="no-repeat">no-repeat</option>
+              <option value="repeat">repeat</option>
+              <option value="repeat-x">repeat-x</option>
+              <option value="repeat-y">repeat-y</option>
+              <option value="space">space</option>
+              <option value="round">round</option>
+            </select>
+          </div>
+        </div>
+        <!-- 포지션 -->
+        <div class="group-wrapper">
+          <div class="group-title">⚙️ position ( linear-gradient , img5 ~ img1 )</div>
+          <div class="group group-position">
+            <div class="group-grid-3">
+              <input type="text" id="pos6" value="center">
+              <input type="text" id="pos5" value="center">
+              <input type="text" id="pos4" value="center">
+              <input type="text" id="pos3" placeholder="예: top">
+              <input type="text" id="pos2" placeholder="예: right">
+              <input type="text" id="pos1" value="right bottom">
+            </div>
+          </div>
+        </div>
+        <!-- 사이즈 -->
+        <div class="group-wrapper">
+          <div class="group-title">⚙️ size ( linear-gradient , img5 ~ img1 )</div>
+            <div class="group group-size">
+              <div class="group-grid-3">
+                <input type="text" id="size6" value="cover">
+                <input type="text" id="size5" value="auto">
+                <input type="text" id="size4" value="auto">
+                <input type="text" id="size3" placeholder="예: 1000px">
+                <input type="text" id="size2" placeholder="예: 900px">
+                <input type="text" id="size1" value="cover">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 미리보기 창 -->
+  <div class="preview-panel">
+    <iframe id="previewFrame" scrolling="no"></iframe>
+  </div>
+  <script type="text/javascript" src="https://archive.org/download/maxWD/BIE_js_0930_0455.js"></script>
+
+  <!-- 대표 img + 링크 -->
+  <p class="thumbnail">
+    <a href="https://cafe.daum.net/fc-ing" target="_blank">
+      <img src="https://t1.daumcdn.net/cafeattach/1P9cy/671a80eed2ff7cc1e05f89f59e1a210aca9c41cc" alt="대표 이미지">
+    </a>
+  </p>
+</body>
+</html>
