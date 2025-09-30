@@ -1,0 +1,91 @@
+﻿
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>URL ✂️ CUT</title>
+
+  <!-- 스타일시트 연결 -->
+  <link rel="stylesheet" href="UC_sty.css">
+
+  <!-- 전역 설정값 선언 -->
+  <script>
+    window.DEFAULT_SETTINGS = {
+      effectUrl: "https://t1.daumcdn.net/cafeattach/1GyvT/736f9e89d3f46ba9a54e21d5fd8d4ffaddc884a9",
+      bgUrl: "https://t1.daumcdn.net/cafeattach/1X9P8/d2d302b5cf9c6523acbda7c769e18f2dc2cdbf17",
+      r: 250,
+      g: 250,
+      b: 222
+    };
+  </script>
+</head>
+<body>
+  <div id="mainContent" class="card">
+    <h2>🔗 링크 자동 정리 + 사용자 지정</h2>
+
+    <label for="linkInput">🌐 URL</label>
+    <input type="text" id="linkInput" placeholder="“ URL” 을 붙여 넣어 주세요" autofocus>
+
+    <label for="customCut">✂️ CUT 문자</label>
+    <input type="text" id="customCut" placeholder="디폴트: “ ?download ”">
+    <button onclick="resetCut()">🔄 디폴트 복원</button>
+
+    <div id="extraCuts">
+      <label for="customCut2">✂️ CUT 문자 (2)</label>
+      <input type="text" id="customCut2" placeholder="예: &ref=">
+      <label for="customCut3">✂️ CUT 문자 (3)</label>
+      <input type="text" id="customCut3" placeholder="예: #token">
+    </div>
+
+    <!-- <div id="output"></div> -->
+
+    <!-- 메인 메시지 영역 -->
+    <div id="mainMessage" style="text-align:center; margin-top:10px; color:green;"></div>
+
+    <!-- 카드 스킨 body -->
+    <button id="showCustomizerBtn" class="settings-icon" onclick="showCustomizer()" title="스킨설정">⚙️</button>
+    <div id="customizer" class="hidden">
+    <button class="closeCustomizerBtn" onclick="closeCustomizer()" title="닫기"> ✖ </button>
+
+      <div style="display: flex; align-items: center; margin-bottom: 10px; margin-top: 32px;">
+        <label for="effectUrl" style="width: 50px; text-align: left; color: #e74c3c;">효과:</label>
+        <input type="text" id="effectUrl" placeholder="https://..." style="text-align: right;">
+      </div>
+      <div style="display: flex; align-items: center; margin-bottom: 10px;">
+        <label for="bgUrl" style="width: 50px; text-align: left; color: #4a90e2;">배경:</label>
+        <input type="text" id="bgUrl" placeholder="https://..." style="text-align: right;">
+      </div>
+
+      <!-- RGB 슬라이더 -->
+      <div class="slider-group">
+        <div><label style="color: #e74c3c;">R</label><input type="range" id="r" min="0" max="255" value="220" oninput="updateColor()"></div>
+        <div><label style="color: #2ecc71;">G</label><input type="range" id="g" min="0" max="255" value="250" oninput="updateColor()"></div>
+        <div><label style="color: #4a90e2;">B</label><input type="range" id="b" min="0" max="255" value="220" oninput="updateColor()"></div>
+      </div>
+      <button onclick="applyCustomStyle()" style="color:blue">적용</button>
+      <button onclick="resetSettings()" style="color:green">초기화</button>
+      <hr>
+
+      <!-- 설정 출력 / 입력 -->
+      <label style="color:blue">설정 출력 💌</label>
+      <textarea id="exportBox" readonly></textarea>
+      <button onclick="exportSettings()">출력</button>
+      <hr>
+      <label style="color:red">💾 설정 입력</label>
+      <textarea id="importBox" placeholder="“효과, 배경, RGB(값)”을 여기에 붙여넣기"></textarea>
+      <button onclick="importSettings()">입력</button>
+
+      <!-- 설정창 내부 메시지 영역 -->
+      <div id="customizerMessage" style="text-align:center; margin-top:10px; color:blue;"></div>
+    </div>
+  </div>
+   <script type="text/javascript" src="UC_js.js"></script>
+
+  <!-- 썸네일 링크 -->
+  <p class="thumbnail">
+    <a href="https://cafe.daum.net/fc-ing" target="_blank">
+      <img src="UC_img.jpg" alt="스윗홈">
+    </a>
+  </p>
+</body>
+</html>
