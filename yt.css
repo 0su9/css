@@ -1,0 +1,15 @@
+﻿#yt {
+  width: 320px;
+  height: 40px;
+  border-radius: 25px;
+  overflow: hidden;
+  position: relative;
+  border:3px double #888888;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+}
+#yt iframe {
+  position: absolute;
+  top: -130px;
+  left: 0px;
+  opacity: 0.6;
+}
