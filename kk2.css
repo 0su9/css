@@ -1,0 +1,17 @@
+﻿#kk {
+  width: 170px;
+  height: 30px;
+  border-radius: 25px;
+  overflow: hidden;
+  position: relative;
+  border:3px double #888888;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+}
+#kk iframe {
+  width: 320px;
+  height: 180px;
+  position: absolute;
+  top: -150px;
+  left: -18px;
+  opacity: 0.5;
+}
