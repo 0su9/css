@@ -8,7 +8,7 @@ body {
 }
 
 #previewFrame {
-  width: 100%;
+  width: 80%;
   height: 100vh;
   border: none;
 }
@@ -118,3 +118,4 @@ button:hover {
   opacity: 0.9;
 
 }
+
