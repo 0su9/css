@@ -4,9 +4,9 @@
 
   // 샘플 주소로 입력창 채우기
   urlInput.value = `https://youtu.be/${sampleVideoId}`;
-  widthSelect.value = '70';
-  radiusInput.value = '25';
-  paddingInput.value = '10';
+  widthSelect.value = '85';
+  radiusInput.value = '20';
+  paddingInput.value = '7';
   bgcolorInput.value = '#ffffff';
 
   // 자동 태그 생성
@@ -42,18 +42,18 @@ function generateTag() {
   }
 
   let styleVars = '';
-  if (maxWidth !== '70') styleVars += `--maxwidth: ${maxWidth}%; `;
-  if (radius !== '25') styleVars += `--radius: ${radius}; `;
-  if (padding !== '10') styleVars += `--padding: ${padding}; `;
+  if (maxWidth !== '85') styleVars += `--maxwidth: ${maxWidth}%; `;
+  if (radius !== '20') styleVars += `--radius: ${radius}; `;
+  if (padding !== '7') styleVars += `--padding: ${padding}; `;
   if (bgcolor.toLowerCase() !== '#ffffff') styleVars += `--bgcolor: ${bgcolor}; `;
 
   const styleAttr = styleVars ? ` style="${styleVars.trim()}"` : '';
 
   const tag = `
 <div align="center"><div class="video-wrapper"${styleAttr}>
-<iframe src="https://www.youtube.com/embed/?playlist=${videoId}&loop=1&autoplay=1&vq=highres" allow="autoplay" frameborder="0" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/?playlist=${videoId}&autoplay=1&loop=1&vq=highres" allow="autoplay" frameborder="0" allowfullscreen></iframe>
 </div></div>
-<link rel="stylesheet" href="https://0su9.github.io/css/yt_frm_sty.css">
+<link href="https://0su9.github.io/css/yt_frm_sty.css" rel="stylesheet">
   `.trim();
 
   resultBox.value = tag;
@@ -61,11 +61,11 @@ function generateTag() {
   const previewHTML = `
     <html>
       <head>
-        <link rel="stylesheet" href="https://0su9.github.io/css/yt_frm_sty.css">
+        <link href="https://0su9.github.io/css/yt_frm_sty.css" rel="stylesheet">
       </head>
       <body>
         <div align="center"><div class="video-wrapper"${styleAttr}>
-          <iframe src="https://www.youtube.com/embed/?playlist=${videoId}&loop=1&autoplay=1&vq=highres" allow="autoplay" frameborder="0" allowfullscreen></iframe>
+          <iframe src="https://www.youtube.com/embed/?playlist=${videoId}&autoplay=1&loop=1&vq=highres" allow="autoplay" frameborder="0" allowfullscreen></iframe>
         </div></div>
       </body>
     </html>
@@ -86,4 +86,5 @@ radiusInput.addEventListener('input', generateTag);
 paddingInput.addEventListener('input', generateTag);
 
 bgcolorInput.addEventListener('input', generateTag);
+
 
