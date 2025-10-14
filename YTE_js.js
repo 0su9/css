@@ -51,7 +51,7 @@ function generateTag() {
 
   const tag = `
 <div align="center"><div class="video-wrapper"${styleAttr}>
-<iframe src="https://www.youtube.com/embed/?playlist=${videoId}&autoplay=1&loop=1&vq=highres" allow="autoplay" frameborder="0" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/?playlist=${videoId}&autoplay=1&loop=1&vq=highres" allow="autoplay;fullscreen" frameborder="0"></iframe>
 </div></div>
 <link href="https://0su9.github.io/css/yt_frm_sty.css" rel="stylesheet">
   `.trim();
@@ -65,7 +65,7 @@ function generateTag() {
       </head>
       <body>
         <div align="center"><div class="video-wrapper"${styleAttr}>
-          <iframe src="https://www.youtube.com/embed/?playlist=${videoId}&autoplay=1&loop=1&vq=highres" allow="autoplay" frameborder="0" allowfullscreen></iframe>
+          <iframe src="https://www.youtube.com/embed/?playlist=${videoId}&autoplay=1&loop=1&vq=highres" allow="autoplay;fullscreen" frameborder="0"></iframe>
         </div></div>
       </body>
     </html>
@@ -86,7 +86,3 @@ radiusInput.addEventListener('input', generateTag);
 paddingInput.addEventListener('input', generateTag);
 
 bgcolorInput.addEventListener('input', generateTag);
-
-
-
-
