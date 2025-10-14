@@ -1,6 +1,7 @@
 ﻿* { box-sizing: border-box; }
 body {
   margin: 0;
+  margin-left: 230px;
   font-family: 'Segoe UI', sans-serif;
   background: #f4f6f9;
   position: relative;
@@ -115,4 +116,5 @@ button:hover {
 
 .thumbnail img:hover {
   opacity: 0.9;
+
 }
