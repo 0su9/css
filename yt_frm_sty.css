@@ -1,6 +1,6 @@
 ﻿.video-wrapper {
   --radius: 20;
-  --padding: 10;
+  --padding: 7;
   --bgcolor:  #ffffff;
   position: relative;
   width: 100%;
@@ -22,3 +22,4 @@
   min-width: 0 !important;
 
 }
+
