@@ -84,5 +84,4 @@ urlInput.addEventListener('input', generateTag);
 widthSelect.addEventListener('change', generateTag);
 radiusInput.addEventListener('input', generateTag);
 paddingInput.addEventListener('input', generateTag);
-
 bgcolorInput.addEventListener('input', generateTag);
