@@ -62,7 +62,6 @@ function generateTag() {
     <html>
       <head>
         <link href="https://0su9.github.io/css/yt_frm_sty.css" rel="stylesheet">
-        <style> body { margin-left: 230px; } </style>
       </head>
       <body>
         <div align="center"><div class="video-wrapper"${styleAttr}>
@@ -87,6 +86,7 @@ radiusInput.addEventListener('input', generateTag);
 paddingInput.addEventListener('input', generateTag);
 
 bgcolorInput.addEventListener('input', generateTag);
+
 
 
 
