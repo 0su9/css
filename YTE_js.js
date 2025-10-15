@@ -53,7 +53,7 @@ function generateTag() {
 <div align="center"><div class="video-wrapper"${styleAttr}>
 <iframe src="https://www.youtube.com/embed/?playlist=${videoId}&autoplay=1&loop=1&vq=highres" allow="autoplay" allowfullscreen frameborder="0"></iframe>
 </div></div>
-<link href="https://0su9.github.io/css/yt_frm_sty.css" rel="stylesheet">
+<link href="https://0su9.github.io/css/div_frm.css" rel="stylesheet">
   `.trim();
 
   resultBox.value = tag;
@@ -61,7 +61,7 @@ function generateTag() {
   const previewHTML = `
     <html>
       <head>
-        <link href="https://0su9.github.io/css/yt_frm_sty.css" rel="stylesheet">
+        <link href="https://0su9.github.io/css/div_frm.css" rel="stylesheet">
       </head>
       <body>
         <div align="center"><div class="video-wrapper"${styleAttr}>
@@ -85,4 +85,5 @@ widthSelect.addEventListener('change', generateTag);
 radiusInput.addEventListener('input', generateTag);
 paddingInput.addEventListener('input', generateTag);
 bgcolorInput.addEventListener('input', generateTag);
+
 
