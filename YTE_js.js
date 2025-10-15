@@ -5,7 +5,7 @@
   // 샘플 주소로 입력창 채우기
   urlInput.value = `https://youtu.be/${sampleVideoId}`;
   widthSelect.value = '85';
-  radiusInput.value = '20';
+  radiusInput.value = '17';
   paddingInput.value = '7';
   bgcolorInput.value = '#ffffff';
 
@@ -43,7 +43,7 @@ function generateTag() {
 
   let styleVars = '';
   if (maxWidth !== '85') styleVars += `--maxwidth: ${maxWidth}%; `;
-  if (radius !== '20') styleVars += `--radius: ${radius}; `;
+  if (radius !== '17') styleVars += `--radius: ${radius}; `;
   if (padding !== '7') styleVars += `--padding: ${padding}; `;
   if (bgcolor.toLowerCase() !== '#ffffff') styleVars += `--bgcolor: ${bgcolor}; `;
 
@@ -85,5 +85,6 @@ widthSelect.addEventListener('change', generateTag);
 radiusInput.addEventListener('input', generateTag);
 paddingInput.addEventListener('input', generateTag);
 bgcolorInput.addEventListener('input', generateTag);
+
 
 
