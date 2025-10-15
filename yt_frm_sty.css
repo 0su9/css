@@ -1,7 +1,7 @@
 ﻿.video-wrapper {
   --radius: 20;
   --padding: 7;
-  --bgcolor:  #ffffff;
+  --bgcolor: #ffffff;
   position: relative;
   width: 100%;
   max-width: var(--maxwidth, 85%);
@@ -17,7 +17,7 @@
   height: 100%;
   outline: 2px solid var(--bgcolor);
   border-radius: calc((var(--radius) - var(--padding)) * 1px);
-  background-color: #000; 
+  background-color: var(--bgcolor); 
   display: block;
   min-width: 0 !important;
 }
