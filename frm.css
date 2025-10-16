@@ -27,7 +27,7 @@
     max-width: 100%;
     box-shadow: none;
     padding: 0;
-    border-radius: 1;
+    border-radius: 0;
   }
 
   .video-wrapper iframe {
@@ -35,5 +35,6 @@
     outline: none;
   }
 }
+
 
 
