@@ -56,7 +56,7 @@ function generateTag() {
 <div class="video-wrapper"${styleAttr}>
 <iframe src="https://kakaotv.daum.net/embed/player/cliplink/${videoId}?autoplay=1&loop=1" allow="autoplay;fullscreen" frameborder="0"></iframe>
 </div>
-<link href="https://0su9.github.io/css/div_frm.css" rel="stylesheet">
+<link href="https://0su9.github.io/css/frm.css" rel="stylesheet">
   `.trim();
 
   resultBox.value = tag;
@@ -64,7 +64,7 @@ function generateTag() {
   const previewHTML = `
     <html>
       <head>
-        <link href="https://0su9.github.io/css/div_frm.css" rel="stylesheet">
+        <link href="https://0su9.github.io/css/frm.css" rel="stylesheet">
       </head>
       <body>
         <div class="video-wrapper"${styleAttr}>
@@ -88,4 +88,5 @@ widthSelect.addEventListener('change', generateTag);
 radiusInput.addEventListener('input', generateTag);
 paddingInput.addEventListener('input', generateTag);
 bgcolorInput.addEventListener('input', generateTag);
+
 alignSelect.addEventListener('change', generateTag);
