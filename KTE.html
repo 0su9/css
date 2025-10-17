@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>카카오 🎬 태그 생성기</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
+  <link href="YTE.css" rel="stylesheet">
+</head>
+<body>
+
+  <div class="panel">
+    <h2>카카오 🎬 태그 생성기</h2>
+
+    <label for="kakaoUrl">카카오 주소</label>
+    <input type="text" id="kakaoUrl">
+    <p class="note">※ https://tv.kakao.com/v/... 또는 https://kakaotv.daum.net/embed/player/cliplink/...</p>
+    <div class="row">
+      <div>
+        <label for="maxWidth">최대폭 (%)</label>
+        <select id="maxWidth">
+          <option value="70">70%</option>
+          <option value="75">75%</option>
+          <option value="80">80%</option>
+          <option value="85" selected>85%</option>
+          <option value="90">90%</option>
+          <option value="95">95%</option>
+          <option value="100">100%</option>
+        </select>
+      </div>
+      <div>
+        <label for="bgcolor">배경색</label>
+        <input type="color" id="bgcolor" value="#ffffff">
+      </div>
+      <div>
+        <label for="alignment">정렬</label>
+        <select id="alignment">
+          <option value="center" selected>중앙 정렬</option>
+          <option value="left">왼쪽 정렬</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="row">
+      <div>
+        <label for="radius">라운드 (px)</label>
+        <input type="number" id="radius" min="0" max="50" value="17">
+      </div>
+      <div>
+        <label for="padding">패딩 (px)</label>
+        <input type="number" id="padding" min="0" max="30" value="7">
+      </div>
+    </div>
+
+    <label for="result">📋 자동 생성된 태그</label>
+    <textarea id="result" readonly></textarea>
+    <button onclick="copyToClipboard()">💾 복사하기</button>
+    <p class="note">※ 다음카페 글쓰기에서 HTML 모드로 붙여넣으세요</p>
+  </div>
+
+  <iframe id="previewFrame"></iframe>
+
+  <script type="text/javascript" src="KTE.js"></script>
+  
+    <!-- 썸네일 링크 -->
+  <p class="thumbnail">
+    <a href="https://cafe.daum.net/fc-ing" target="_blank">
+      <img src="KTE.jpg" alt="스윗홈">
+    </a>
+  </p>
+</body>
+</html>
