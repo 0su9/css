@@ -26,16 +26,17 @@
 @media (max-width: 768px) {
   .video-wrapper {
     max-width: 100%;
-    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-    padding: 2;
-    border-radius: 4;
+    box-shadow: none;
+    padding: 0;
+    border-radius: 0;
   }
 
   .video-wrapper iframe {
-    border-radius: 2;
+    border-radius: 0;
     outline: none;
   }
 }
+
 
 
 
