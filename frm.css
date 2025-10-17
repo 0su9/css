@@ -23,7 +23,7 @@
   min-width: 0 !important;
 }
 /* 모바일 대응 */
-@media (max-width: 300px) {
+@media (max-width: 768px) {
   .video-wrapper {
     max-width: 100%;
     box-shadow: none;
@@ -36,6 +36,7 @@
     outline: none;
   }
 }
+
 
 
 
