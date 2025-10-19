@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>🎬 영상 선택형 플레이리스트</title>
+  <base href="https://0su9.github.io/css/" target="_blank">
+  <link href="ytpl.css" rel="stylesheet">
+</head>
+<body>
+
+  <h3>🎬 유튜브 URL</h3>
+
+  <input type="text" id="urlInput"
+         placeholder="여기에 「 주소 」를 붙여 넣으세요"
+         onfocus="clearDefault(this)"
+         oninput="handlePaste(this)">
+  <p class="note">※ https://youtu.be/... 또는 https://youtube.com/watch?v=...</p>
+
+  <h3>🎞️ playlist =</h3>
+  <textarea id="playlistOutput" oninput="applyEditedIDs()" placeholder="직접「 공유ID 」입력, 편집 가능 (추가: 저장, 불러오기)"></textarea>
+  <div class="button-row">
+    <button onclick="extractPlaylist()">📝 playlist 창에 적용</button>
+    <button onclick="saveAsTxt()">💾 pl.txt 로 저장</button>
+    <input type="file" accept=".txt" onchange="loadFromTxt(this)" id="fileInput" style="display: none;">
+    <button onclick="document.getElementById('fileInput').click()">📂 pl.txt 파일 불러오기</button>
+  </div>
+
+  <p class="note"> ※ 썸네일 버튼들은 드래그해서 위치(순서) 변경 가능합니다.</p>
+
+  <div class="playlis-thumbnail" id="playlistBox" ></div>
+
+  <!-- SortableJS 라이브러리 추가 -->
+  <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+
+  <div class="video-wrapper" id="previewContainer"></div>
+
+  <script type="text/javascript" src="ytpl.js"></script>
+    <!-- 썸네일 링크 -->
+  <p class="switter">
+    <a href="https://cafe.daum.net/fc-ing" target="_blank">
+      <img src="https://0su9.github.io/css/ytpl.jpg" alt="스윗홈">
+    </a>
+  </p>
+</body>
+</html>
