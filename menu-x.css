@@ -1,0 +1,17 @@
+﻿/* 영역 숨김 */
+#cafemenu,
+.kakao_ad_area,
+.bbs_tit_g .tit_info .desc_item,
+#footer,
+#bizBoardAd,
+#mAside,
+#ad_wrapper {
+  display: none !important;
+}
+
+/* 본문 폭 최대화 */
+#content {
+  margin-left: 0px !important;
+  margin-right: 0px !important;
+  width: auto; /* 본문 폭 자동 확장 */
+}

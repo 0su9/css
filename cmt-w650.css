@@ -1,0 +1,5 @@
+﻿#bbs_contents body ,#primaryContent
+.cont_comment,#Content {
+  display: block;
+  width:650px; /* 댓글창 너비 */
+}
