@@ -1,14 +1,14 @@
-﻿  #hz {
+#hz {
     width: 30px;
     height: 30px;
     overflow: hidden;
     border-radius: 50%;
-    border: 1px solid #cccccc;
-    box-shadow: 5px 5px 5px black;
+    border:3px double #888888;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
     box-sizing: content-box;
-  }
-  #hz audio {
+}
+#hz audio {
     margin-top: -12px;
     margin-left: -11px;
     display: block;
-  }
+}
