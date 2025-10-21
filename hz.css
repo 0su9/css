@@ -1,0 +1,14 @@
+﻿  #hz {
+    width: 30px;
+    height: 30px;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 1px solid #cccccc;
+    box-shadow: 5px 5px 5px black;
+    box-sizing: content-box;
+  }
+  #hz audio {
+    margin-top: -12px;
+    margin-left: -11px;
+    display: block;
+  }
