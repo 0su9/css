@@ -1,0 +1,69 @@
+﻿.video-wrapper {
+  --radius: 17;
+  --padding: 7;
+  --bgcolor: #ffffff;
+  position: relative;
+  width: 100%;
+  max-width: var(--maxwidth, 85%);
+  aspect-ratio: 16/9;
+  background-color: var(--bgcolor);
+  border-radius: calc(var(--radius) * 1px);
+  padding: calc(var(--padding) * 1px);
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  margin: 0 auto;  /* 중앙정렬 */
+}
+.video-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  outline: 2px solid var(--bgcolor);
+  border-radius: calc((var(--radius) - var(--padding)) * 1px);
+  background-color: var(--bgcolor);
+  display: block;
+  min-width: 0 !important;
+}
+/* 모바일 대응 */
+@media (max-width: 768px) {
+  .video-wrapper {
+    max-width: 100%;
+    box-shadow: none;
+    padding: 0;
+    border-radius: 0;
+  }
+
+  .video-wrapper iframe {
+    border-radius: 0;
+    outline: none;
+  }
+}
+
+/* ▶ skin 숨김 */
+.video-wrapper[skinX="1"] #cafe_gnb,
+.video-wrapper[skinX="1"] #header,
+.video-wrapper[skinX="1"] #footer {
+  display: none !important;
+}
+
+/* ▶ menu 숨김 + 본문 확장 */
+.video-wrapper[menuX="1"] #cafemenu,
+.video-wrapper[menuX="1"] .kakao_ad_area,
+.video-wrapper[menuX="1"] .bbs_tit_g .tit_info .desc_item,
+.video-wrapper[menuX="1"] #footer,
+.video-wrapper[menuX="1"] #bizBoardAd,
+.video-wrapper[menuX="1"] #mAside,
+.video-wrapper[menuX="1"] #ad_wrapper {
+  display: none !important;
+}
+.video-wrapper[menuX="1"] #content {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  width: auto !important;
+}
+
+/* ▶ 댓글창 너비 조절 */
+.video-wrapper[cmt650="1"] #bbs_contents body,
+.video-wrapper[cmt650="1"] #primaryContent .cont_comment,
+.video-wrapper[cmt650="1"] #Content {
+  display: block;
+  width: 650px !important;
+}
