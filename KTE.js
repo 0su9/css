@@ -83,13 +83,13 @@ function generateTag() {
 
   let extraLinks = '';
   if (document.getElementById('skinOption').checked) {
-    extraLinks += `<link href="https://0su9.github.io/css/skin-x.css" rel="stylesheet">\n`;
+    extraLinks += `<link href="https://0su9.github.io/css/skin-x.css" rel="stylesheet" 스킨숨김>\n`;
   }
   if (document.getElementById('menuOption').checked) {
-    extraLinks += `<link href="https://0su9.github.io/css/menu-x.css" rel="stylesheet">\n`;
+    extraLinks += `<link href="https://0su9.github.io/css/menu-x.css" rel="stylesheet" 메뉴숨김>\n`;
   }
   if (document.getElementById('cmtOption').checked) {
-    extraLinks += `<link href="https://0su9.github.io/css/cmt-w650.css" rel="stylesheet">\n`;
+    extraLinks += `<link href="https://0su9.github.io/css/cmt-w650.css" rel="stylesheet" 댓글좁게>\n`;
   }
   
   const styleAttr = styleVars ? ` style="${styleVars.trim()}"` : '';
@@ -98,7 +98,7 @@ function generateTag() {
 <div class="video-wrapper"${styleAttr}>
 <iframe src="https://kakaotv.daum.net/embed/player/cliplink/${videoId}?autoplay=1&loop=1" allow="autoplay;fullscreen" frameborder="0"></iframe>
 </div>
-<link href="https://0su9.github.io/css/frm.css" rel="stylesheet">
+<link href="https://0su9.github.io/css/frm.css" rel="stylesheet" 동영상>
 ${extraLinks.trim()}
   `.trim();
 
@@ -107,7 +107,7 @@ ${extraLinks.trim()}
   const previewHTML = `
     <html>
       <head>
-        <link href="https://0su9.github.io/css/frm.css" rel="stylesheet">
+        <link href="https://0su9.github.io/css/frm.css" rel="stylesheet" 동영상>
         ${extraLinks.trim()}
       </head>
       <body>
@@ -134,3 +134,4 @@ paddingInput.addEventListener('input', generateTag);
 bgcolorInput.addEventListener('input', generateTag);
 
 alignSelect.addEventListener('change', generateTag);
+
