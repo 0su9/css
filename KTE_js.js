@@ -11,7 +11,39 @@
 
   // 자동 태그 생성
   generateTag();
+
+  // 체크박스 이벤트 연결
+  document.getElementById('skinOption').addEventListener('change', toggleStyle);
+  document.getElementById('menuOption').addEventListener('change', toggleStyle);
+  document.getElementById('cmtOption').addEventListener('change', toggleStyle);
 });
+
+function toggleStyle() {
+  const head = document.head;
+
+  const styles = [
+    { id: 'skinOption', href: 'https://0su9.github.io/css/skin-x.css', key: 'skin' },
+    { id: 'menuOption', href: 'https://0su9.github.io/css/menu-x.css', key: 'menu' },
+    { id: 'cmtOption', href: 'https://0su9.github.io/css/cmt-w650.css', key: 'cmt' }
+  ];
+
+  styles.forEach(style => {
+    const checkbox = document.getElementById(style.id);
+    const existing = document.querySelector(`link[data-dynamic-style="${style.key}"]`);
+
+    if (checkbox.checked && !existing) {
+      const link = document.createElement('link');
+      link.href = style.href;
+      link.rel = 'stylesheet';
+      link.setAttribute('data-dynamic-style', style.key);
+      head.appendChild(link);
+    } else if (!checkbox.checked && existing) {
+      existing.remove();
+    }
+  });
+
+  generateTag(); // 자동 태그에도 반영
+}
 
 const urlInput = document.getElementById('kakaoUrl');
 const widthSelect = document.getElementById('maxWidth');
@@ -47,6 +79,17 @@ function generateTag() {
   if (padding !== '7') styleVars += `--padding: ${padding}; `;
   if (bgcolor.toLowerCase() !== '#ffffff') styleVars += `--bgcolor: ${bgcolor}; `;
 
+  let extraLinks = '';
+  if (document.getElementById('skinOption').checked) {
+    extraLinks += `<link href="https://0su9.github.io/css/skin-x.css" rel="stylesheet">\n`;
+  }
+  if (document.getElementById('menuOption').checked) {
+    extraLinks += `<link href="https://0su9.github.io/css/menu-x.css" rel="stylesheet">\n`;
+  }
+  if (document.getElementById('cmtOption').checked) {
+    extraLinks += `<link href="https://0su9.github.io/css/cmt-w650.css" rel="stylesheet">\n`;
+  }
+
   const styleAttr = styleVars ? ` style="${styleVars.trim()}"` : '';
 
   const tag = `
@@ -54,6 +97,7 @@ function generateTag() {
 <iframe src="https://kakaotv.daum.net/embed/player/cliplink/${videoId}?autoplay=1&loop=1" allow="autoplay;fullscreen" frameborder="0"></iframe>
 </div></div>
 <link href="https://0su9.github.io/css/div_frm.css" rel="stylesheet">
+${extraLinks.trim()}
   `.trim();
 
   resultBox.value = tag;
@@ -62,6 +106,7 @@ function generateTag() {
     <html>
       <head>
         <link href="https://0su9.github.io/css/div_frm.css" rel="stylesheet">
+        ${extraLinks.trim()}
       </head>
       <body>
         <div align="center"><div class="video-wrapper"${styleAttr}>
@@ -85,7 +130,3 @@ widthSelect.addEventListener('change', generateTag);
 radiusInput.addEventListener('input', generateTag);
 paddingInput.addEventListener('input', generateTag);
 bgcolorInput.addEventListener('input', generateTag);
-
-
-
-
