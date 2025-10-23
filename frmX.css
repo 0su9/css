@@ -1,4 +1,4 @@
-﻿.video-wrapper {
+.video-wrapper {
   --radius: 17;
   --padding: 7;
   --bgcolor: #ffffff;
@@ -37,35 +37,40 @@
   }
 }
 
-/* ▶ skin 숨김 */
-.video-wrapper[data-skin="1"] #cafe_gnb,
-.video-wrapper[data-skin="1"] #header,
-.video-wrapper[data-skin="1"] #footer {
+/* ▶ skin-on: 카페 스킨 제거 */
+.skin-on #cafe_gnb,
+.skin-on #header,
+.skin-on #footer {
   display: none !important;
 }
 
-/* ▶ menu 숨김 + 본문 확장 */
-.video-wrapper[data-menu="1"] #cafemenu,
-.video-wrapper[data-menu="1"] .kakao_ad_area,
-.video-wrapper[data-menu="1"] .bbs_tit_g .tit_info .desc_item,
-.video-wrapper[data-menu="1"] #footer,
-.video-wrapper[data-menu="1"] #bizBoardAd,
-.video-wrapper[data-menu="1"] #mAside,
-.video-wrapper[data-menu="1"] #ad_wrapper {
+/* ▶ menu-on: 메뉴 및 광고 제거 + 본문 확장 */
+.menu-on #cafemenu,
+.menu-on .kakao_ad_area,
+.menu-on .bbs_tit_g .tit_info .desc_item,
+.menu-on #footer,
+.menu-on #bizBoardAd,
+.menu-on #mAside,
+.menu-on #ad_wrapper {
   display: none !important;
 }
-.video-wrapper[data-menu="1"] #content {
+.menu-on #content {
   margin-left: 0 !important;
   margin-right: 0 !important;
   width: auto !important;
 }
 
-/* ▶ 댓글창 너비 조절 */
-.video-wrapper[data-cmt="1"] #bbs_contents body,
-.video-wrapper[data-cmt="1"] #primaryContent .cont_comment,
-.video-wrapper[data-cmt="1"] #Content {
+/* ▶ cmt-on: 댓글창 너비 조절 */
+.cmt-on #bbs_contents body,
+.cmt-on #primaryContent .cont_comment,
+.cmt-on #Content {
   display: block;
   width: 650px !important;
-
 }
+
+
+
+
+
+
 
