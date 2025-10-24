@@ -1,0 +1,14 @@
+﻿/* 영역 숨김 */
+#cafemenu,
+#footer,
+#bizBoardAd,
+#ad_wrapper {
+display: none !important;
+}
+
+/* 본문 폭 최대화 */
+#content {
+margin-left: 0px !important;
+margin-right: 0px !important;
+width: auto; /* 본문 폭 자동 확장 */
+}
